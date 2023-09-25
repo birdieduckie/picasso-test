@@ -1,8 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import Like from 'assets/like.svg'
-import Heart from 'assets/heart.svg'
-
 import { ButtonProps } from './Button'
 
 export const StyledButton = styled.button<ButtonProps>`
@@ -61,10 +58,5 @@ export const StyledButton = styled.button<ButtonProps>`
       &:disabled {
         color: #8f97a3;
       }
-    `};
-  ${p =>
-    p.variant === 'like' &&
-    css`
-      background: red;
-    `};
+    `}
 `

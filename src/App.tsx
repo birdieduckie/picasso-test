@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom'
 
-import { PostsListPage } from 'pages/postsListPage/postsListPage'
-import { PostPage } from 'pages/postPage/postPage'
+import { List } from 'pages/List/List'
+import { Post } from 'pages/Post/Post'
 
 
 
@@ -11,7 +11,7 @@ interface AppProps {}
 const App: FC<AppProps> = () => {
   return (
     <Routes>
-        <Route path='/' element={<PostsListPage />} />
+        <Route path='/' element={<List />} />
     </Routes>
   );
 }
