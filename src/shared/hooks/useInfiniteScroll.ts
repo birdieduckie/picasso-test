@@ -1,8 +1,8 @@
 import { UseQuery } from '@reduxjs/toolkit/dist/query/react/buildHooks'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import debounce from 'debounce'
 
-import { IPost } from '../api/types'
+import { Post } from '../api/types'
 
 export const isValidNotEmptyArray = (array: any[]): boolean => {
   return !!(array && array?.length > 0)
@@ -20,8 +20,7 @@ export const useInfiniteScroll = (
   { size = 10, ...queryParameters }
 ) => {
   const [localPage, setLocalPage] = useState(1)
-  const [combinedData, setCombinedData] = useState<IPost[]>([])
-  const [hasMore, setHasMore] = useState(true)
+  const [combinedData, setCombinedData] = useState<Post[]>([])
 
   const queryResponse = useGetDataListQuery({
     page: localPage,
@@ -41,9 +40,7 @@ export const useInfiniteScroll = (
         setCombinedData((previousData) => [...previousData, ...fetchData])
       }
     }
-  }, [fetchData])
-
-  console.log({ queryResponse })
+  }, [fetchData, localPage, originalArgs.page])
 
   const readMore = debounce(() => {
     if (localPage < maxPages && localPage === originalArgs?.page) {

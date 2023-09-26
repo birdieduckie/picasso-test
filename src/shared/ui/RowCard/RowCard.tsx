@@ -4,7 +4,7 @@ import { Button } from 'shared/ui/Button/Button'
 
 import { Container, Head, Text } from './styled'
 
-interface PostProps {
+interface CardProps {
   id: number
   title: string
   body: string
@@ -13,7 +13,7 @@ interface PostProps {
   style?: any
 }
 
-export const RowCard: FC<PostProps> = ({
+export const RowCard: FC<CardProps> = ({
   id,
   title,
   body,

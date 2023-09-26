@@ -4,7 +4,7 @@ import InfiniteLoader from 'react-window-infinite-loader'
 import { FixedSizeList } from 'react-window'
 
 import { postApi } from 'shared/api/index'
-import { useInfiniteScroll } from 'shared/hooks/index'
+import { useInfiniteScroll } from 'shared/hooks/useInfiniteScroll'
 
 import { RowCard } from 'shared/ui/RowCard/RowCard'
 
@@ -13,15 +13,14 @@ import { Container } from './styled'
 interface ListProps {}
 
 export const List: FC<ListProps> = () => {
+  const navigate = useNavigate()
+
   const {
     combinedData: data,
-    error,
     readMore,
     isLoading,
     isLoaded,
   } = useInfiniteScroll(postApi.useGetPostsQuery, { size: 10 })
-
-  const navigate = useNavigate()
 
   const navigateToPost = (id: number) => navigate(`/post/${id}`)
 
@@ -29,10 +28,7 @@ export const List: FC<ListProps> = () => {
 
   const loadMoreItems = isLoading ? () => {} : readMore
 
-  console.log({ combinedData: data, error, readMore, isLoading, isLoaded })
-
   return (
-    // @ts-ignore
     <Container>
       <InfiniteLoader
         isItemLoaded={isItemLoaded}
@@ -43,7 +39,7 @@ export const List: FC<ListProps> = () => {
         {({ onItemsRendered, ref }) => (
           <FixedSizeList
             ref={ref}
-            height={1000}
+            height={500}
             width={800}
             onItemsRendered={onItemsRendered}
             itemSize={50}
