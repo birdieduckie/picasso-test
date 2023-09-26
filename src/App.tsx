@@ -12,6 +12,8 @@ const App: FC<AppProps> = () => {
   return (
     <Routes>
         <Route path='/' element={<List />} />
+        <Route path='/:id' element={<Post />} />
+        <Route path='*' element={<Navigate to='/' replace />} />
     </Routes>
   );
 }

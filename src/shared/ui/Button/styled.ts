@@ -5,9 +5,10 @@ import { ButtonProps } from './Button'
 export const StyledButton = styled.button<ButtonProps>`
   min-width: 110px;
   padding: 12px 16px;
+  margin: 0 10px 0 0; 
   border: 0;
   border-radius: 4px;
-  color: white;
+  color: #E1EBEE;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   cursor: pointer;
