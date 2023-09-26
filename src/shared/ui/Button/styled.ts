@@ -5,15 +5,15 @@ import { ButtonProps } from './Button'
 export const StyledButton = styled.button<ButtonProps>`
   min-width: 110px;
   padding: 12px 16px;
-  margin: 0 10px 0 0; 
+  margin: 0 10px 0 0;
   border: 0;
   border-radius: 4px;
-  color: #E1EBEE;
+  color: #e1ebee;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   cursor: pointer;
 
-  ${p =>
+  ${(p) =>
     p.variant === 'primary' &&
     css`
       background: #4375f8;
@@ -29,7 +29,7 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `};
 
-  ${p =>
+  ${(p) =>
     p.variant === 'danger' &&
     css`
       background: #f9674e;
@@ -45,7 +45,7 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `};
 
-  ${p =>
+  ${(p) =>
     p.variant === 'inline' &&
     css`
       background: white;

@@ -4,20 +4,18 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
-  height: 15%;
+  height: 50px;
   padding: 0 5px 5px 5px;
-  
 `
-
 export const Head = styled.div`
-  display: flex; 
+  
   width: 20%;
   justify-content: space-between;
   align-self: center;
   padding: 0 5px 5px 5px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: clip;
+  text-overflow: ellipsis;
 `
 export const Text = styled.p`
   width: 60%;
